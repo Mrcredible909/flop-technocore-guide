@@ -1,0 +1,13 @@
+# Jangan pernah commit identitas atau kunci
+*.pem
+*.key
+identity.pem
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Lokal
+.env
+.DS_Store
