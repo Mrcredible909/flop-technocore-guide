@@ -22,6 +22,33 @@
 - [🇬🇧 English](#-english)
 - [🇮🇩 Bahasa Indonesia](#-bahasa-indonesia)
 
+### Quick verify / Verifikasi cepat (30 detik)
+
+```bash
+pip install -r requirements.txt
+python verify_guide.py
+# OK: valid proof for did:key:z6Mk... @ <commit>
+# OK: examples/ valid (proof-example.json + room-output.json)
+# Semua cek lolos. / All checks passed.
+```
+
+**Files / Isi repo:**
+
+| File | Buat apa / What for |
+|---|---|
+| `README.md` | Panduan bilingual EN/ID — baca ini dulu / Read this first |
+| `verify_guide.py` | `flop-verify`: verifikasi `proof.json` lokal tanpa identity / Verify proof locally, no identity needed |
+| `proof.json` | Bukti signed asli repo ini (DID + commit + signature) / Real signed proof |
+| `examples/` | Template kosong `XXX` buat belajar bentuk JSON / Blank templates |
+| `requirements.txt` | `cryptography` pinned — buat `verify_guide.py` / Deps for verifier |
+| `banner.jpg` | Banner repo / Repo banner |
+
+Tool full (`init`, `did`, `say`, `proof`) ada di
+[technocore-did-starter](https://github.com/zunmax/technocore-did-starter) —
+repo ini sengaja nggak duplikat `technocore_agent.py` biar nggak bentrok versi.
+Full tool lives in technocore-did-starter — this repo only ships the lightweight
+verifier on purpose.
+
 ---
 
 ## 🇬🇧 English
