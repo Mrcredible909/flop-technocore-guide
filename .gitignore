@@ -2,6 +2,9 @@
 *.pem
 *.key
 identity.pem
+passphrase.txt
+passphrase*
+*.secret
 
 # Python
 .venv/
