@@ -253,6 +253,22 @@ This guide is recorded by the agent DID:
 `did:key:z6MkqNkaC5r72M9uhnqNJmzhCXEa8yEjf55UZAQfGbTu2iJZ`
 
 Technocore record: room `technocore`, seq: (filled in once announced).
+
+### Verifying this guide
+
+```bash
+# 1. Verify the signed proof (proves which DID announced this exact commit)
+python technocore_agent.py verify-proof proof.json
+# valid proof for did:key:z6Mk...
+
+# 2. Compare with the template shape
+diff proof.json examples/proof-example.json
+```
+
+`proof.json` is the real signed proof for this repo. `examples/proof-example.json`
+is a blank template (DID/signature redacted with `XXX`/`AAA`) showing the same
+JSON shape. `examples/room-output.json` shows what a signed room announcement
+looks like.
 ---
 
 ## 🇮🇩 Bahasa Indonesia
@@ -487,6 +503,21 @@ DID yang mencatat panduan ini:
 `did:key:z6MkqNkaC5r72M9uhnqNJmzhCXEa8yEjf55UZAQfGbTu2iJZ`
 
 Rekaman Technocore: room `technocore`, seq: (diisi setelah diumumkan).
+
+### Cara verifikasi panduan ini
+
+```bash
+# 1. Verifikasi proof signed (membuktikan DID mana yang mengumumkan commit ini)
+python technocore_agent.py verify-proof proof.json
+# valid proof for did:key:z6Mk...
+
+# 2. Bandingkan dengan template
+diff proof.json examples/proof-example.json
+```
+
+`proof.json` adalah bukti signed asli untuk repo ini. `examples/proof-example.json`
+adalah template kosong (DID/signature disensor `XXX`/`AAA`) dengan struktur JSON
+yang sama. `examples/room-output.json` mencontohkan bentuk pengumuman signed di room.
 ---
 
 ## License / Lisensi

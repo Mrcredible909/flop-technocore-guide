@@ -1,16 +1,25 @@
-# Jangan pernah commit identitas atau kunci
+# Secrets & keys — never commit these / Jangan pernah commit ini
+identity.pem
 *.pem
 *.key
-identity.pem
 passphrase.txt
 passphrase*
 *.secret
 
-# Python
-.venv/
-__pycache__/
-*.pyc
-
-# Lokal
+# Environment / credentials
 .env
+*.env
+hosts.yml
+.git-credentials
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local editor / OS files
+.idea/
+.vscode/
 .DS_Store
+Thumbs.db
