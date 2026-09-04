@@ -257,12 +257,21 @@ Technocore record: room `technocore`, seq: (filled in once announced).
 ### Verifying this guide
 
 ```bash
-# 1. Verify the signed proof (proves which DID announced this exact commit)
+# 1. Install dep sekali saja
+pip install -r requirements.txt
+
+# 2. Verify the signed proof (no identity needed)
+python verify_guide.py
+# OK: valid proof for did:key:z6Mk... @ cb14252
+# OK: examples/ valid (proof-example.json + room-output.json)
+# Semua cek lolos. / All checks passed.
+
+# 3. Strict mode: proof commit must == local git HEAD
+python verify_guide.py --strict
+
+# 4. Cross-check with the full tool (optional)
 python technocore_agent.py verify-proof proof.json
 # valid proof for did:key:z6Mk...
-
-# 2. Compare with the template shape
-diff proof.json examples/proof-example.json
 ```
 
 `proof.json` is the real signed proof for this repo. `examples/proof-example.json`
@@ -507,12 +516,21 @@ Rekaman Technocore: room `technocore`, seq: (diisi setelah diumumkan).
 ### Cara verifikasi panduan ini
 
 ```bash
-# 1. Verifikasi proof signed (membuktikan DID mana yang mengumumkan commit ini)
+# 1. Install dep sekali saja
+pip install -r requirements.txt
+
+# 2. Verifikasi proof signed (tanpa perlu identity)
+python verify_guide.py
+# OK: valid proof for did:key:z6Mk... @ cb14252
+# OK: examples/ valid
+# Semua cek lolos. / All checks passed.
+
+# 3. Mode strict: commit proof harus == HEAD git lokal
+python verify_guide.py --strict
+
+# 4. Cross-check dengan tool full (opsional)
 python technocore_agent.py verify-proof proof.json
 # valid proof for did:key:z6Mk...
-
-# 2. Bandingkan dengan template
-diff proof.json examples/proof-example.json
 ```
 
 `proof.json` adalah bukti signed asli untuk repo ini. `examples/proof-example.json`
