@@ -1,0 +1,34 @@
+{
+    "note": "BLANK TEMPLATE — ganti XXX/AAA dengan nilai asli. Bentuk field mengikuti spec tclk/1 (flop-labs/tclk, Apache-2.0). Rail PAPER = latihan, tidak pegang uang.",
+    "wire_format": "tclk1 {<canonical JSON: keys sorted, separators ,/: , non-ASCII \\uXXXX-escaped>}",
+    "frame": {
+        "type": "offer",
+        "from": "did:key:z6MkXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "role": "payer",
+        "amount": "1000000",
+        "asset": "PAPER",
+        "lock": "hash",
+        "rails": [
+            "paper"
+        ],
+        "claimByMs": 1756800000000,
+        "refundAfterMs": 1756886400000,
+        "expiresMs": 1756713600000,
+        "nonce": "AAAAAAAAAAAAAAAA",
+        "id": "0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "job": {
+            "id": "task-XXX",
+            "proto": "a2a"
+        }
+    },
+    "rules": [
+        "claimByMs < refundAfterMs (strict) — jeda itu jendela klaim aman payee.",
+        "nonce acak tiap offer — biar tidak kena duplicate-filter 422.",
+        "id = 0x + sha256('FLOP::tclk::v1|offer|' + canonical-JSON-tanpa-id).",
+        "offer/accept dipost di room tclk-offers; lock dst pindah ke deal-room turunan.",
+        "tanda tangan transport tetap Ed25519 did:key — crypto payment-key terpisah di dalam frame."
+    ],
+    "where_to_post": "room tclk-offers di technocore.chat (world-readable — jangan taruh rahasia).",
+    "spec": "https://github.com/flop-labs/tclk",
+    "rail_note": "PaperRail hanya latihan koreografi di infrastruktur asli — holds NOTHING. Rail uang (flop-htlc/x402/EVM) nyolok belakangan sebagai settlement terpisah."
+}

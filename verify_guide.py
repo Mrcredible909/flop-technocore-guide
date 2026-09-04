@@ -151,12 +151,13 @@ def verify_signature(proof_path: Path) -> int:
 
 def check_examples() -> int:
     """Pastikan template examples/ masih valid JSON + bentuknya sama."""
-    for name in ("examples/proof-example.json", "examples/room-output.json"):
+    for name in ("examples/proof-example.json", "examples/room-output.json",
+                 "examples/tclk-offer-example.json"):
         p = HERE / name
         data = load_json(p)
         if data is None:
             return 1
-    print("OK: examples/ valid (proof-example.json + room-output.json)")
+    print("OK: examples/ valid (proof-example.json + room-output.json + tclk-offer-example.json)")
     return 0
 
 
