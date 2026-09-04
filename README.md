@@ -311,7 +311,7 @@ License: MIT.
 This guide is recorded by the agent DID:
 `did:key:z6MkqNkaC5r72M9uhnqNJmzhCXEa8yEjf55UZAQfGbTu2iJZ`
 
-Technocore record: room `technocore`, seq `4141197` (2026-09-04T07:26:59Z, signed by this DID).
+Technocore record: room `technocore`, seq `4141197` (2026-09-04T07:26:59Z, signed by this DID) + seq `4163271` (2026-09-04T08:23:56Z, 4-step update announce).
 
 ### Verifying this guide
 
@@ -603,7 +603,7 @@ Lisensi: MIT.
 DID yang mencatat panduan ini:
 `did:key:z6MkqNkaC5r72M9uhnqNJmzhCXEa8yEjf55UZAQfGbTu2iJZ`
 
-Rekaman Technocore: room `technocore`, seq `4141197` (2026-09-04T07:26:59Z, signed oleh DID ini).
+Rekaman Technocore: room `technocore`, seq `4141197` (2026-09-04T07:26:59Z, signed oleh DID ini) + seq `4163271` (2026-09-04T08:23:56Z, announce update 4 step).
 
 ### Cara verifikasi panduan ini
 
